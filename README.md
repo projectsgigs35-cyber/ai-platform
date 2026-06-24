@@ -146,6 +146,7 @@ ollama serve
 ### Terminal 2 — Backend
 ```bash
 cd ai-platform/backend
+pip3 install fastapi httpx chromadb python-multipart aiofiles --break-system-packages
 uvicorn main:app --reload --port 8000
 ```
 Backend will be live at `http://localhost:8000`. Check it's healthy:
@@ -155,7 +156,8 @@ curl http://localhost:8000/health
 
 ### Terminal 3 — Frontend
 ```bash
-cd ai-platform/frontend
+cd ~/ai-platform/frontend
+npm install ajv@^8 --legacy-peer-deps
 npm start
 ```
 This opens `http://localhost:3000` automatically in your browser.
